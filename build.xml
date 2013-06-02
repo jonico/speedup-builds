@@ -1,0 +1,85 @@
+<project default="jar" xmlns:jacoco="antlib:org.jacoco.ant">
+  <property name="build.sysclasspath" value="ignore"/>
+
+  <taskdef uri="antlib:org.jacoco.ant" resource="org/jacoco/ant/antlib.xml">
+    <classpath path="lib/jacoco/jacocoant.jar"/>
+  </taskdef>
+  
+  <target name="clean">
+    <delete dir="build"/>
+  </target>
+  
+  <target name="compile" unless="skip.compile">
+    <mkdir dir="target/classes" />
+    <javac srcdir="src/main/java" destdir="target/classes" debug="on"/>
+  </target>
+  
+  <target name="jar" depends="compile" unless="skip.jar">
+    <jar file="target/hello.jar">
+      <fileset dir="target/classes"/>
+    </jar>
+  </target>
+  
+  <target name="test-compile">
+    <mkdir dir="target/test-classes" />
+    <javac srcdir="src/test/java" destdir="target/test-classes">
+      <classpath>
+        <pathelement path="target/classes"/>
+        <pathelement path="lib/junit.jar"/>
+      </classpath>
+    </javac>
+  </target>
+
+  <target name="test" depends="compile,test-compile">
+    <mkdir dir="target/test-reports"/>
+    <jacoco:coverage enabled="${jacoco}" destfile="target/jacoco.exec">
+      <junit printsummary="yes" haltonfailure="yes" fork="true" forkmode="once">
+        <classpath>
+          <fileset dir="lib" includes="*.jar" />
+          <pathelement path="target/classes" />
+          <pathelement path="target/test-classes" />
+        </classpath>
+        <formatter type="xml"/>
+        <formatter type="plain"/>
+        <batchtest fork="yes" todir="target/test-reports">
+          <fileset dir="src/test/java" excludesfile="exclusions.txt">
+            <include name="**/*Test*.java"/>
+          </fileset>
+        </batchtest>
+      </junit>
+    </jacoco:coverage>
+  </target>
+
+  <target name="findbugs" depends="jar">
+    <taskdef name="findbugs" classname="edu.umd.cs.findbugs.anttask.FindBugsTask">
+      <classpath>
+        <fileset dir="lib/findbugs/lib" includes="*.jar"/>
+      </classpath>
+    </taskdef>
+    <findbugs home="lib/findbugs" output="xml" outputFile="target/findbugs.xml">
+      <sourcePath path="src"/>
+      <class location="target/hello.jar"/>
+    </findbugs>
+  </target>
+
+  <target name="jacoco">
+    <property name="jacoco" value="true"/>
+  </target>
+
+  <target name="jacoco-report" depends="test">
+    <jacoco:report>
+      <executiondata>
+        <file file="target/jacoco.exec"/>
+      </executiondata>
+      <structure name="Test Project">
+        <classfiles>
+          <fileset dir="target/classes"/>
+        </classfiles>
+        <sourcefiles>
+          <fileset dir="src"/>
+        </sourcefiles>
+      </structure>
+      <html destdir="target/jacoco-report"/>
+    </jacoco:report>
+  </target>
+</project>
