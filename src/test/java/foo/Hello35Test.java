@@ -5,6 +5,6 @@ public class Hello35Test extends TestCase {
     public void test1() {}
     public void test2() {}
     public void test3() throws Exception {
-        Thread.sleep(35);
+        Thread.sleep(350);
     }
 }
