@@ -1,10 +1,15 @@
 package foo;
-import junit.framework.TestCase;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
-public class Hello63Test extends TestCase {
-    public void test1() {}
-    public void test2() {}
-    public void test3() throws Exception {
+public class Hello63Test {
+    @Test public void one() {
+        if (Math.random() < 0.015) {
+            fail("oops");
+        }
+    }
+    @Test public void two() {}
+    @Test public void three() throws Exception {
         Thread.sleep(630);
     }
 }
