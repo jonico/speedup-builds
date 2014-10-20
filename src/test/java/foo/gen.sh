@@ -1,5 +1,5 @@
 #!/bin/bash
-for i in {1..100}; do
+for i in {00..99}; do
 cat > Hello${i}Test.java << EOF
 package foo;
 import org.junit.Test;
@@ -13,7 +13,7 @@ public class Hello${i}Test {
     }
     @Test public void two() {}
     @Test public void three() throws Exception {
-        Thread.sleep(${i}0);
+        Thread.sleep(${i##0}0);
     }
 }
 EOF

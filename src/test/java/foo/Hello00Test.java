@@ -2,7 +2,7 @@ package foo;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class Hello5Test {
+public class Hello00Test {
     @Test public void one() {
         if (Math.random() < 0.015) {
             fail("oops");
@@ -10,6 +10,6 @@ public class Hello5Test {
     }
     @Test public void two() {}
     @Test public void three() throws Exception {
-        Thread.sleep(50);
+        Thread.sleep(00);
     }
 }
