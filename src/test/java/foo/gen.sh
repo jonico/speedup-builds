@@ -8,7 +8,7 @@ public class Hello${i}Test extends TestCase {
     public void test1() {}
     public void test2() {}
     public void test3() throws Exception {
-        Thread.sleep(${i});
+        Thread.sleep(${i}0);
     }
 }
 EOF
