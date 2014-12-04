@@ -6,6 +6,10 @@
   <artifactId>test</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
+  <properties>
+    <maven.compiler.source>1.5</maven.compiler.source>
+    <maven.compiler.target>1.5</maven.compiler.target>
+  </properties>
 
   <build>
     <plugins>
