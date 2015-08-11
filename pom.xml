@@ -19,6 +19,7 @@
         <version>2.17</version>
         <configuration>
           <excludesFile>${project.basedir}/exclusions.txt</excludesFile>
+          <includesFile>${project.basedir}/inclusions.txt</includesFile>
         </configuration>
       </plugin>
     </plugins>
