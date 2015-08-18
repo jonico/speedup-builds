@@ -17,10 +17,6 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
         <version>2.17</version>
-        <configuration>
-          <excludesFile>${project.basedir}/exclusions.txt</excludesFile>
-          <includesFile>${project.basedir}/inclusions.txt</includesFile>
-        </configuration>
       </plugin>
     </plugins>
   </build>
@@ -33,4 +29,45 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+
+  <profiles>
+    <profile>
+      <!-- if ./exclusions.txt is present, use that as the exclusion list. Useful when skipping tests. -->
+      <id>exclusions</id>
+      <activation>
+        <file>
+          <exists>exclusions.txt</exists>
+        </file>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <configuration>
+              <excludesFile>exclusions.txt</excludesFile>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <!-- if ./inclusions.txt is present, use that as the inclusion list. Useful when skipping tests. -->
+      <id>inclusions</id>
+      <activation>
+        <file>
+          <exists>inclusions.txt</exists>
+        </file>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <configuration>
+              <includesFile>inclusions.txt</includesFile>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 </project>
