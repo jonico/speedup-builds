@@ -23,4 +23,4 @@
 # Great videos to watch
 
 * [Tools for Continuous Integration at Google Scale](https://www.youtube.com/watch?v=KH2_sB1A6lA)
-* [https://www.youtube.com/watch?v=X0VH78ye4yY](https://www.youtube.com/watch?v=X0VH78ye4yY) 
+* [Facebook's Build Environment](https://www.youtube.com/watch?v=X0VH78ye4yY) 
