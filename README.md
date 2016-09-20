@@ -2,7 +2,7 @@
 
 * What is taking most of the time in your builds? Cloning, building, testing?
 * Improve cloning times by
-  - [shallow clones](https://issues.jenkins-ci.org/browse/JENKINS-24728)
+  - [shallow clones](https://issues.jenkins-ci.org/browse/JENKINS-24728) (if a fresh clone is done every time)
   - reduced repository sizes by moving large binary files to Git LFS using [bfg-repo cleaner](https://github.com/rtyley/bfg-repo-cleaner/releases/tag/v1.12.5)
   - [push based build triggering](https://wiki.jenkins-ci.org/display/JENKINS/GitHub+Plugin#GitHubPlugin-TriggerabuildwhenachangeispushedtoGitHub)
 * Improve build times by
