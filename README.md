@@ -20,7 +20,8 @@
   - [use different commit status contexts for different tests](https://wiki.jenkins-ci.org/display/JENKINS/GitHub+Plugin), only make smoke test status checks [mandatory](https://help.github.com/articles/enabling-required-status-checks/)
   - [use a build system that is automatically caching test results parallelizing tests](http://prezi.com/20fxomjc_goy/?utm_campaign=share&utm_medium=copy&rc=ex0share) (if code tested and test have not changed)
 
-# Great videos to watch
+# Interesting links
 
 * [Tools for Continuous Integration at Google Scale](https://www.youtube.com/watch?v=KH2_sB1A6lA)
-* [Facebook's Build Environment](https://www.youtube.com/watch?v=X0VH78ye4yY) 
+* [Facebook's Build Environment](https://www.youtube.com/watch?v=X0VH78ye4yY)
+* [Speeding up builds with buck](https://buckbuild.com/)
