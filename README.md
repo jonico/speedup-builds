@@ -11,7 +11,7 @@
   - SSDs and more memory
   - build parallelization
 * Improve test times by
-  - caching build results
+  - caching test results
   - SSDs and more memory
   - test parallelization including partitioning
   - only do smoke tests in build, all tests in nightly build
