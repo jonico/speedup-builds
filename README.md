@@ -14,7 +14,7 @@
 * Improve test times by
   - [test partitioning across multiple machines](https://github.com/jenkinsci/pipeline-plugin/blob/master/TUTORIAL.md) (this repository)
   - SSDs, more cores and more memory
-  - pre-heating of integration test systems (e.g. by unfreezing memory snapshots of already running application server VMs)
+  - pre-heating of integration test systems (e.g. by unfreezing memory snapshots of already fully up and running application server and database VMs)
   - only do smoke tests in build, all tests in nightly build (CI result is now also shown in code browser out of the pull request)
   - [optimized compiler switches](https://rogerkeays.com/why-is-maven-so-slow)
   - [use different commit status contexts for different tests](https://wiki.jenkins-ci.org/display/JENKINS/GitHub+Plugin), only make smoke test status checks [mandatory](https://help.github.com/articles/enabling-required-status-checks/)
