@@ -12,7 +12,7 @@
   - [Optimized compiler switches](https://rogerkeays.com/why-is-maven-so-slow)
   - [use a build system that is caching build results globally and does build parallelization automatically](http://prezi.com/20fxomjc_goy/?utm_campaign=share&utm_medium=copy&rc=ex0share)
 * Improve test times by
-  - [test partitioning across multiple machines](https://github.com/jenkinsci/pipeline-plugin/blob/master/TUTORIAL.md) (this repository)
+  - [test partitioning across multiple machines using Jenkins Parallel Test Executor Plugin](https://github.com/jenkinsci/pipeline-plugin/blob/master/TUTORIAL.md) (this repository)
   - SSDs, more cores and more memory
   - pre-heating of integration test systems (e.g. by unfreezing memory snapshots of already fully up and running application server and database VMs)
   - only do smoke tests in build, all tests in nightly build (CI result is now also shown in code browser out of the pull request)
