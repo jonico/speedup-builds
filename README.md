@@ -1,5 +1,29 @@
-# speed-up-tests
-example how to automatically split tests based on their execution time
+# How to speed up builds and tests
+
+* What is taking most of the time in your builds? Cloning, building, testing?
+* Improve cloning times by
+  - shallow clones
+  - reduced repository sizes (bfg-repo cleaner)
+* Improve build times by
+  - using an artifact repository for shared components
+  - only build components once and transport them to all build slaves
+  - use a build system that is caching build results globally
+  - SSDs and more memory
+  - build parallelization
+* Improve test times by
+  - caching build results
+  - SSDs and more memory
+  - test parallelization including partitioning
+  - only do smoke tests in build, all tests in nightly build
+  - use multiple commit status contexts, only make smoke test status checks mandatory
+
+# Great videos to watch
+
+* [Tools for Continuous Integration at Google Scale](https://www.youtube.com/watch?v=KH2_sB1A6lA)
+* [https://www.youtube.com/watch?v=X0VH78ye4yY](https://www.youtube.com/watch?v=X0VH78ye4yY) 
+
+
+## Example how to automatically split tests based on their execution time
 
 This document is intended for new users of the pipeline feature to learn how to write and understand pipelines.
 
