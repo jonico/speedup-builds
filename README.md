@@ -26,6 +26,7 @@
   - only do smoke tests in build, all tests in nightly build (CI result is now also shown in code browser out of the pull request)
   - [optimized compiler switches](https://rogerkeays.com/why-is-maven-so-slow)
   - [use different commit status contexts for different tests](https://wiki.jenkins-ci.org/display/JENKINS/GitHub+Plugin), only make smoke test status checks [mandatory](https://help.github.com/articles/enabling-required-status-checks/)
+  - [find the best tradeoff of number of tests/test duration and code coverage](https://www.atlassian.com/software/clover)
   - [use a build system that is automatically caching test results parallelizing tests](http://prezi.com/20fxomjc_goy/?utm_campaign=share&utm_medium=copy&rc=ex0share) (if code tested and test have not changed)
 
 # Interesting links
