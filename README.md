@@ -24,7 +24,7 @@
   - if you like to use a pre-setup environment using Docker that integrates with GitHub.com, you can follow [this tutorial](https://hub.docker.com/r/jenkinsci/pipeline-as-code-github-demo/).
   - pre-heating of integration test systems (e.g. by unfreezing memory snapshots of already fully up and running application server and database VMs)
   - only do smoke tests in build, all tests in nightly build (CI result is now also shown in code browser out of the pull request)
-  - [optimized compiler switches](https://rogerkeays.com/why-is-maven-so-slow), parallel test runs (Maven 3 now supports this [better](https://cwiki.apache.org/confluence/display/MAVEN/Parallel+builds+in+Maven+3))
+  - [optimized compiler switches](https://rogerkeays.com/why-is-maven-so-slow), parallel test runs (Maven 3 now supports this [better](https://cwiki.apache.org/confluence/display/MAVEN/Parallel+builds+in+Maven+3)), compile options like -XX:+TieredCompilation -XX:TieredStopAtLevel=1 for short running mvn invocations
   - [use different commit status contexts for different tests](https://wiki.jenkins-ci.org/display/JENKINS/GitHub+Plugin), only make smoke test status checks [mandatory](https://help.github.com/articles/enabling-required-status-checks/)
   - [find the best tradeoff of number of tests/test duration and code coverage](https://www.atlassian.com/software/clover)
   - [use a build system that is automatically caching test results parallelizing tests](http://prezi.com/20fxomjc_goy/?utm_campaign=share&utm_medium=copy&rc=ex0share) (if code tested and test have not changed)
