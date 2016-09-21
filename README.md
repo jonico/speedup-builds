@@ -16,6 +16,7 @@
   - identifying which tests are still testing used functionality and disable the rest
   - rewriting integration and system tests to use more mocking (one process without IPC and file system interaction preferred)
   - analyze bottlenecks and silent exceptions using New Relic, Dynatrace, OverOps or just VisualVM
+  - Break monolythic applications done into multiple components that can be tested in isolation (and only retested if they changed)
   - dedicate a person per team to improve test execution time
   - [test partitioning across multiple machines using Jenkins Parallel Test Executor Plugin](https://github.com/jenkinsci/pipeline-plugin/blob/master/TUTORIAL.md) (this repository)
   - SSDs, more cores and more memory
