@@ -4,7 +4,7 @@
 * Improve cloning times by
   - [shallow clones](https://issues.jenkins-ci.org/browse/JENKINS-24728) ([only if a fresh clone is needed every time](https://github.com/jonico/speedup-builds/issues/1))
   - Use a [reference repository](https://git-scm.com/docs/git-clone#git-clone---shared) (under Advanced Clone Behaviors) so that you can point to a local base repo instead of copying the entire history for every project
-  - Narrow refspec by selecting "Honor refspec on initial clone" in Advanced Clone Behaviors and specfying an appropriate refspec
+  - [Narrow refspec](https://youtu.be/TsWkZLLU-s4?t=2m18s) by selecting "Honor refspec on initial clone" in Advanced Clone Behaviors and specfying an appropriate refspec
   - Sparse checkout only the directories that are needed for the operation
   - reduced repository sizes by moving large binary files to Git LFS using [bfg-repo cleaner](https://github.com/rtyley/bfg-repo-cleaner/releases/tag/v1.12.5)
   - [push based build triggering](https://wiki.jenkins-ci.org/display/JENKINS/GitHub+Plugin#GitHubPlugin-TriggerabuildwhenachangeispushedtoGitHub), + use [ngrok](https://ngrok.com/) or open a port if needed
