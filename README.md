@@ -2,7 +2,6 @@
 
 * What is taking most of the time in your builds? Cloning, building, testing?
 * Improve cloning times by
-  - [shallow clones](https://issues.jenkins-ci.org/browse/JENKINS-24728) ([only if a fresh clone is needed every time](https://github.com/jonico/speedup-builds/issues/1))
   - Use a [reference repository](https://git-scm.com/docs/git-clone#git-clone---shared) (under Advanced Clone Behaviors) so that you can point to a local base repo instead of copying the entire history for every project
   - [Narrow refspec](https://youtu.be/TsWkZLLU-s4?t=2m18s) by selecting "Honor refspec on initial clone" in Advanced Clone Behaviors and specfying an appropriate refspec
   - Sparse checkout only the directories that are needed for the operation
