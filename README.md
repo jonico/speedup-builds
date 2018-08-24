@@ -2,7 +2,7 @@
 
 * What is taking most of the time in your builds? Cloning, building, testing?
 * Improve cloning times by
-  - Use a [reference repository](https://git-scm.com/docs/git-clone#git-clone---shared) (under Advanced Clone Behaviors) so that you can point to a local base repo instead of copying the entire history for every project
+  - Use a [reference repository](https://git-scm.com/docs/git-clone#git-clone---shared) (under Advanced Clone Behaviors) so that you can point to a local base repo instead of copying the entire history for every project, you may also check out @larsxschneider's [cached clone](https://github.com/larsxschneider/cached-clone) script that also caches submodules and Git LFS objects
   - [Narrow refspec](https://youtu.be/TsWkZLLU-s4?t=2m18s) by selecting "Honor refspec on initial clone" in Advanced Clone Behaviors and specfying an appropriate refspec
   - Sparse checkout only the directories that are needed for the operation
   - reduced repository sizes by moving large binary files to Git LFS using [bfg-repo cleaner](https://github.com/rtyley/bfg-repo-cleaner/releases/tag/v1.12.5)
