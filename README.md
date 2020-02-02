@@ -1,4 +1,4 @@
-# How to speed up builds and tests
+# How to speed up builds and tests in your CI environment 
 
 * What is taking most of the time in your builds? Cloning, building, testing?
 * Improve cloning times by
